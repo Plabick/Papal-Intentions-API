@@ -4,7 +4,7 @@ info:
   description: Get the Holy Father\'s Intentions for the month in a convenient  JSON format. 
   version: 0.0.1
 servers:
-  - url: http://localhost:8080
+  - url: https://papal-intentions-api.herokuapp.com
 paths:
   /{year}/{month}:
     get:
