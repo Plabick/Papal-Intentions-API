@@ -20,7 +20,7 @@ jobs:
         run: |
           ls
           cd docs/
-          ls
+          ls ..
           git config --local user.email "${{secrets.MY_EMAIL}}"
           git config --local user.name "Plabick"
           git stage .
