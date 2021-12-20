@@ -1,0 +1,33 @@
+name: Generate Documentation
+
+on:
+  workflow_dispatch:
+
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: OpenAPI Generator Action
+        uses: kpurdon/openapi-generator-action@v0.0.1
+        with:
+            args: generate -i PapalIntentionAPI-Design.yaml -g html -o /docs
+            
+      - name: Stage and commit changes
+        run: |
+          cd docs/
+          git config --local user.email "${{secrets.MY_EMAIL}}"
+          git config --local user.name "Plabick"
+          git stage .
+          git commit -m "[BOT] Updated docs"
+          git push
+      
+      - name: Push
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GHA_PAT }}
+          branch: ${{ github.ref }}
+
