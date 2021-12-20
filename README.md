@@ -1,5 +1,8 @@
 # Papal Intentions API
-Get the Holy Father's Intentions for a given month in convenient JSON format. Made to gain experience with Insomnia and OpenAPI 3. 
+Get the Holy Father's Intentions for a given month in convenient JSON format. Made to gain experience with NodeJS Express, Insomnia and OpenAPI 3. 
+
+## Running the Server
+Clone this repo and run `index.js`. The server runs on port `8080`.
 
 ## Usage
 ### Documentation Website
