@@ -13,7 +13,7 @@ Read the full docs [here](https://plabick.github.io/Papal-Intentions-API/)
 #### Request
 A Request must contain a year and a month.
 ``` REST
-get https://papal-intentions-api.herokuapp.com/{year}/}{month}
+get https://papal-intentions-api.herokuapp.com/{year}/{month}
 ```
 ```REST
 get https://papal-intentions-api.herokuapp.com/2020/june
