@@ -1,19 +1,22 @@
 # Papal Intentions API
-Get the Holy Father's Intentions for a given month in convenient JSON format. Made to gain experience with NodeJS Express, Insomnia and OpenAPI 3. 
+Get the Holy Father's Intentions for a given month in convenient JSON format. Made to gain experience with NodeJS, Heroku, Insomnia and OpenAPI 3. 
 
-## Running the Server
-Clone this repo and run `npm start`. The server runs on the port given in the `PORT` environment variable, or `8080`.
+## Server
+The server is currently deployed via Heroku @ `https://papal-intentions-api.herokuapp.com/`.
 
-## Usage
+To run your own server, clone this repo and run `npm start`. The server runs on the port given in the `PORT` environment variable, or `8080` by default.
+
+## Client
 ### Documentation Website
 Read the full docs [here](https://plabick.github.io/Papal-Intentions-API/)
 ### The Basics
 #### Request
+A Request must contain a year and a month.
 ``` REST
-get SERVER/{year}/}{month}
+get https://papal-intentions-api.herokuapp.com/{year}/}{month}
 ```
 ```REST
-get SERVER/2020/june
+get https://papal-intentions-api.herokuapp.com/2020/june
 ```
 ### Response
 All responses have the following form
@@ -39,7 +42,7 @@ All responses have the following form
 }
 ```
 ## Put Requests
-Put requests must be sent in writing to the Holy Father at the following adress
+Put requests must be sent in writing to the Holy Father at the following address
 ```
  His Holiness, Pope Francis
  Apostolic Palace
