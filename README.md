@@ -9,7 +9,6 @@ Read the full docs [here](https://plabick.github.io/Papal-Intentions-API/)
 ``` REST
 get SERVER/{year}/}{month}
 ```
-e.g
 ```REST
 get SERVER/2020/june
 ```
