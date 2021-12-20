@@ -18,6 +18,8 @@ jobs:
             
       - name: Stage and commit changes
         run: |
+          ls
+          ls..
           cd docs/
           git config --local user.email "${{secrets.MY_EMAIL}}"
           git config --local user.name "Plabick"
