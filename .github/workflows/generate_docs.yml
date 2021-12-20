@@ -14,7 +14,7 @@ jobs:
       - name: OpenAPI Generator Action
         uses: kpurdon/openapi-generator-action@v0.0.3
         with:
-            args: generate -i PapalIntentionAPI-Design.yaml -g html -o /docs
+            args: generate -i PapalIntentionAPI-Design.yaml -g html -o docs/
             
       - name: Stage and commit changes
         run: |
