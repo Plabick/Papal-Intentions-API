@@ -1,0 +1,42 @@
+openapi: 3.0.0
+info:
+  title: Papal Intentions API
+  description: Get the Holy Father\'s Intentions for the month in a convenient  JSON format. 
+  version: 0.0.1
+servers:
+  - url: http://localhost:8080
+paths:
+  /{year}/{month}:
+    get:
+      summary: Returns the Holy Fathers Intention's for the specified month in English. 
+      parameters:
+        - name: year
+          in: path
+          required: true
+          description:  A 4 digit number representing the year. Minimum 2020.
+          schema:
+            type: number
+        - name: month
+          in: path
+          required: true
+          description: The month to return the intention for. 
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The Holy Father's Intention
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  title:
+                    type: string
+                    example: The Beauty of Marriage
+                  name:
+                    type: string
+                    example: "Let us pray for young people who are preparing for marriage with the support of a Christian community: may they grow in love, with generosity, faithfulness and patience."
+        '400':
+          description: The specified year and month is not contained in this API. 
+        default:
+          description: Unexpected error
