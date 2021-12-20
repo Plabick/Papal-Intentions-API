@@ -2,7 +2,7 @@
 Get the Holy Father's Intentions for a given month in convenient JSON format. Made to gain experience with NodeJS Express, Insomnia and OpenAPI 3. 
 
 ## Running the Server
-Clone this repo and run `npm start`. The server runs on port `8080`.
+Clone this repo and run `npm start`. The server runs on the port given in the PORT environment variable, or `8080`.
 
 ## Usage
 ### Documentation Website
