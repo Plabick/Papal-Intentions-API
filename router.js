@@ -11,29 +11,26 @@ router.get('/:year([0-9]{4})\/:month(*)', handleMonth);
 
 
 function handleRoot(req, res) {
-    res.status(200).send({ message: "root" });
+    res.status(200).send(sendErrorMessage("Please specify a month and year.", res));
 }
 
 
 function handleYear(req, res) {
-    res.status(200).send({ message: "year" });
+    const year = loadYear(req.params.year);
+    if (year == null) { sendErrorMessage("No data for the given year.", res); return; }
+    res.status(200).send(year);
 }
 
 
 function handleMonth(req, res) {
-    //res.status(200).send({ message: "month" });
     const year = loadYear(req.params.year);
-    if (year == null) { sendErrorMessage("No data for the given year", res); return; }
+    if (year == null) { sendErrorMessage("No data for the given year.", res); return; }
     const month = normalizeMonth(req.params.month);
-    if (month == null) {sendErrorMessage("No data for the given month", res); return; }
+    if (month == null) {sendErrorMessage("No data for the given month.", res); return; }
     var payload = year[month];
     res.status(200).send(payload);
-    //            res.status(200).send({ message: "File exists" });
-    //         else { res.status(404).send({ title: "Error", message: "No data for the given year" }); }
-
 }
 
-/** */
 function loadYear(year) {
     var path = `data/${year}.json`
     try {
@@ -56,6 +53,5 @@ function normalizeMonth(month) {
 function sendErrorMessage(body, res) {
     res.status(404).send({ title: "Error", message: body });
 }
-//Routes will go here
 module.exports = router;
 
