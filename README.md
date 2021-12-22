@@ -42,11 +42,11 @@ All responses have the following form
 }
 ```
 ## Put Requests
-Put requests must be sent in writing to the Holy Father at the following address
+Papal intentions can only be changed by the Pope. As such, your put requests are only suggestions. They may be sent in writing to the Holy Father at the following address
 ```
  His Holiness, Pope Francis
  Apostolic Palace
  00120 Vatican City
 ```
 ## Delete Requests
-Delete requests are considered heresy 
+Delete requests are considered heresy.
